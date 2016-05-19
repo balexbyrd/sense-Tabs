@@ -1,9 +1,9 @@
 # sense-Tabs
 Up to 5 different Qlik Sense objects in a single space! Add/remove/adjust icons, adjust tooltips, tab titles, and give the user the option to export to excel. 
 
-![Screenshot](https://raw.githubusercontent.com/balexbyrd/img/master/senseTabs.PNG)
-![Screenshot](https://raw.githubusercontent.com/balexbyrd/img/master/senseTabs2.PNG)
-![Screenshot](https://raw.githubusercontent.com/balexbyrd/img/master/senseTabs3.PNG)
+![Screenshot](https://raw.githubusercontent.com/balexbyrd/img/master/senseTabs.png)
+![Screenshot](https://raw.githubusercontent.com/balexbyrd/img/master/senseTabs2.png)
+![Screenshot](https://raw.githubusercontent.com/balexbyrd/img/master/senseTabs3.png)
 
 ## Installation
 
