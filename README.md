@@ -15,16 +15,17 @@ Up to 5 different Qlik Sense objects in a single space! Add/remove/adjust icons,
 	* **Tab Properties** - adjusts the settings for each tab.
 
 > **Bootstrap info** <http://getbootstrap.com/>
+
 > **Font Awesome icons** <http://fontawesome.io/icons/> - Used to adjust the tab icons
 	
 ## Usage
 
-1. Create an objects in Qlik Sense
+1. Create an object in Qlik Sense
 2. Add the object to the Master Library
 3. Add the Qlik Sense Tabs extension to the interface
 4. Configure properties
 
-> This extension has cross browser compatibility
+> This extension has cross browser compatibility (tested in IE and Chrome)
 
 ## Limitations
 
@@ -39,4 +40,5 @@ MIT
 ## Credits
 
 <https://github.com/mcgovey/Namespaced-Bootstrap>
+
 <https://github.com/mhamano/Qlik-Sense-Tabs>
