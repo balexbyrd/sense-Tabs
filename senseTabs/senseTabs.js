@@ -2,6 +2,7 @@
 //https://github.com/mcgovey/Namespaced-Bootstrap
 //http://getbootstrap.com/
 //https://github.com/mhamano/Qlik-Sense-Tabs
+//
 define( [
 		"qlik"
 		,"jquery"		
