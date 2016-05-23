@@ -88,14 +88,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 		defaultValue: 12
 	};	
 	
-	// SHOW CHART TITLE
-  	var showTitle_for_tab1 = {
-		ref : "props.showTitle1",
-		label : "Show chart title?",
-		type : "boolean",
-		defaultValue : true
-	};	
-	
 	// SHOW ICON
   	var showIcon_for_tab1 = {
 		ref : "props.showIcon1",
@@ -153,14 +145,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 		defaultValue : "Title - 2"
 	};	
 	
-	// SHOW CHART TITLE
-  	var showTitle_for_tab2 = {
-		ref : "props.showTitle2",
-		label : "Show chart title?",
-		type : "boolean",
-		defaultValue : true
-	};	
-	
 	// SHOW ICON
   	var showIcon_for_tab2 = {
 		ref : "props.showIcon2",
@@ -213,14 +197,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 		label : "Title:",
 		type : "string",
 		defaultValue : "Title - 3"
-	};	
-	
-	// SHOW CHART TITLE
-  	var showTitle_for_tab3 = {
-		ref : "props.showTitle3",
-		label : "Show chart title?",
-		type : "boolean",
-		defaultValue : true
 	};	
 	
 	// SHOW ICON
@@ -278,14 +254,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 		defaultValue : "Title - 4"
 	};	
 	
-	// SHOW CHART TITLE
-  	var showTitle_for_tab4 = {
-		ref : "props.showTitle4",
-		label: "Show chart title?",
-		type : "boolean",
-		defaultValue : true
-	};	
-	
 	// SHOW ICON
   	var showIcon_for_tab4 = {
 		ref : "props.showIcon4",
@@ -339,14 +307,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 		label: "Title:",
 		type : "string",
 		defaultValue : "Title - 5"
-	};	
-	
-	// SHOW CHART TITLE
-  	var showTitle_for_tab5 = {
-		ref : "props.showTitle5",
-		label: "Show chart title?",
-		type : "boolean",
-		defaultValue : true
 	};	
 	
 	// SHOW ICON
@@ -412,7 +372,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 					obj_for_tab1 : obj_for_tab1,
 					title_for_tab1 : title_for_tab1,
 					tooltip_for_tab1 : tooltip_for_tab1,
-					showTitle_for_tab1 : showTitle_for_tab1,
 					export_for_tab1 : export_for_tab1,
 					showIcon_for_tab1 : showIcon_for_tab1,
 					icon_for_tab1 : icon_for_tab1				
@@ -425,7 +384,6 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 					obj_for_tab2 : obj_for_tab2,
 					title_for_tab2 : title_for_tab2,
 					tooltip_for_tab2 : tooltip_for_tab2,
-					showTitle_for_tab2 : showTitle_for_tab2,
 					export_for_tab2 : export_for_tab2,
 					showIcon_for_tab2 : showIcon_for_tab2,
 					icon_for_tab2 : icon_for_tab2					
@@ -437,8 +395,7 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 				items : {
 					obj_for_tab3 : obj_for_tab3,
 					title_for_tab3 : title_for_tab3,
-					tooltip_for_tab3 : tooltip_for_tab3,
-					showTitle_for_tab3 : showTitle_for_tab3,					
+					tooltip_for_tab3 : tooltip_for_tab3,					
 					export_for_tab3 : export_for_tab3,
 					showIcon_for_tab3 : showIcon_for_tab3,
 					icon_for_tab3 : icon_for_tab3					
@@ -450,8 +407,7 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 				items : {									
 					obj_for_tab4 : obj_for_tab4,
 					title_for_tab4 : title_for_tab4,
-					tooltip_for_tab4 : tooltip_for_tab4,
-					showTitle_for_tab4 : showTitle_for_tab4,					
+					tooltip_for_tab4 : tooltip_for_tab4,					
 					export_for_tab4 : export_for_tab4,
 					showIcon_for_tab4 : showIcon_for_tab4,
 					icon_for_tab4 : icon_for_tab4				
@@ -463,8 +419,7 @@ define(["qlik", 'ng!$q'], function ( qlik, $q) {
 				items : {
 					obj_for_tab5 : obj_for_tab5,
 					title_for_tab5 : title_for_tab5,
-					tooltip_for_tab5 : tooltip_for_tab5,
-					showTitle_for_tab5 : showTitle_for_tab5,					
+					tooltip_for_tab5 : tooltip_for_tab5,					
 					export_for_tab5 : export_for_tab5,
 					showIcon_for_tab5 : showIcon_for_tab5,
 					icon_for_tab5 : icon_for_tab5					
