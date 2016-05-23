@@ -87,13 +87,17 @@ function ( qlik, $, props, boot, cssContent ) {
 		},
 		paint: function ($element, layout) {
 
+			$element.empty();
 			var html = "";
 			var num_of_tabs = layout.props.numTabs;
 			var object_id = layout.qInfo.qId; //Get this extension's ID --> !important
 			
 			// Create scoped bootstrap div
-			var $bootstrapStyle = $( document.createElement( 'div' ) );
-			$bootstrapStyle.addClass( 'bootstrap_inside' );						
+			var $bootstrapStyle = $( '#' + object_id );
+			$bootstrapStyle = $( document.createElement( 'div' ) );
+			$bootstrapStyle.attr( 'id', object_id  );
+			$bootstrapStyle.addClass( 'bootstrap_inside' );
+			
 			$element.html( $bootstrapStyle );
 
 			// Create tabs
@@ -130,8 +134,8 @@ function ( qlik, $, props, boot, cssContent ) {
 			html += 	'</div>';
 			html += '</article>';
 
-			
-			$('.bootstrap_inside').html( html ); //Insert HTML into scoped bootstrap
+			$bootstrapStyle.html(html);
+			$element.append($bootstrapStyle); //Insert HTML into scoped bootstrap
 			
 			// Resize to see visual --> !important
 			if(repeated==1){
