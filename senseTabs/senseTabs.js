@@ -11,32 +11,24 @@ define( [
 		,"text!./css/style.css"		
 ],
 function ( qlik, $, props, boot, cssContent ) {
-		
-	$( '<style>' ).html( boot ).appendTo( 'head' ); // Adding scoped bootstrap to head
-		
-	$( '<style>' ).html( cssContent ).appendTo( 'head' ); // Adding scopped style to head
-
 	var app = qlik.currApp(this); //App object
 	var repeated = 1;	//Rendering repeat count
 	var act;
 	
-	// Font Awesome CDN
-	var link = document.createElement('link');
-		link.rel = "stylesheet";
-		link.type = "text/css";
-		link.href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css";
-		document.head.appendChild(link);		
-
-	// JQUERY CDN
-	var script = document.createElement('script');
-		script.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
-		document.body.appendChild(script);	
-	
 	// Bootstrap.js CDN
-	var script = document.createElement('script');
-		script.src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js";
-		document.body.appendChild(script);		
+	$( '<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">' ).appendTo( 'body' ); // Bootstrap.js CDN
+	$( '<style>' ).html( boot ).appendTo( 'head' ); // Adding scoped bootstrap to head		
+	$( '<style>' ).html( cssContent ).appendTo( 'head' ); // Adding scopped style to head
 	
+	// Font Awesome CDN
+	if(!$("link[id='FA']").length > 0){
+		$( '<link id="FA" rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">' ).appendTo( 'head' ); // Font Awesome CDN		
+	};
+	
+	// JQUERY CDN
+	$( '<script type="text/javascript" src="//code.jquery.com/jquery-3.1.1.min.js">' ).appendTo( 'body' ); // Bootstrap.js CDN
+	
+
 	
 	//Function to create the new tab content
 	function createTabContent(tab_id,object_id,enable_export) {
@@ -46,7 +38,7 @@ function ( qlik, $, props, boot, cssContent ) {
 		if(enable_export) {
 			tab_content +=		'<i id="export-' + tab_id + '-' + object_id + '" title="Export to Excel" class="fa fa-file-excel-o pull-right text-success" aria-hidden="true"></i>';
 		}
-		tab_content += 				'<div id="viz' + tab_id + '-' + object_id + '" class="qvobject"></div></div>';
+		tab_content += 				'<div id="viz' + tab_id + '-' + object_id + '" class=""></div></div>';
 		tab_content += 			'</main>';
 		tab_content += 		'</section>';	
 
@@ -58,8 +50,8 @@ function ( qlik, $, props, boot, cssContent ) {
 	  	var next = app.getObject( 'viz' + tab_id + '-' + object_id, eval("layout.props.obj" + tab_id));
 		next.then(function(){					
 			// required to see the visual - do not remove
-			var obHt = $('.bootstrap_inside ').height()-80;
-			$(".bootstrap_inside .qv-object-content-container").css("height",obHt+"px");
+			var obHt = $('#'+object_id).height()-48;
+			$('#'+object_id+" .qv-object-content-container").css({"height": obHt+"px", width: '100%'});
 		})			
 	}
 
@@ -146,17 +138,17 @@ function ( qlik, $, props, boot, cssContent ) {
 			// Initial rendering (no clicks made or on screen resize)
 			if(layout.props.obj1 && repeated > 1) {				
 				// Hide residual tabs - only showing first tab
-				$(".bootstrap_inside section[id*="+ object_id + "]:not(.bootstrap_inside #panel-1-"+object_id+")").css("display","none");
+				$('#'+object_id+" section[id*="+ object_id + "]:not(#"+object_id+" #panel-1-"+object_id+")").css("display","none");
 				for (i=1; i<=num_of_tabs; i++) {					
 					// set tab font size
-					$('.bootstrap_inside #tabText-'+i).css('font-size',layout.props.fontSize1+"px");					
+					$('#'+object_id+' #tabText-'+i).css('font-size',layout.props.fontSize1+"px");					
 					// remove title icon
 					if(!eval("layout.props.showIcon"+i)){
-						$('.bootstrap_inside #ic'+i).remove();
+						$('#'+object_id+' #ic'+i).remove();
 					}
 					// remove export icon
 					if(!eval("layout.props.export"+i)){
-						$('.bootstrap_inside #export-'+i).remove();
+						$('#'+object_id+' #export-'+i).remove();
 					}
 				}					
 				createObject("1", object_id, layout); // Build initial tab contents 
@@ -165,15 +157,15 @@ function ( qlik, $, props, boot, cssContent ) {
 			repeated += 1; // counter --> !important
 			
 			// On tab click
-			$('.bootstrap_inside li[id*="' + object_id + '"]').on('click', function (e) {
+			$('#'+object_id+' li[id*="' + object_id + '"]').on('click', function (e) {
 				// Hides the current tab contents				
-				$(".bootstrap_inside section[id*="+ object_id + "]").css("display","none");
+				$('#'+object_id+" section[id*="+ object_id + "]").css("display","none");
 
 				var tab_name = e.currentTarget.id; //Get the id element of the new tab
 				var tab_id = tab_name.replace("li-for-panel-","").replace("-" + object_id,""); //Get the id of the new tab
 
 				//Display the new panel
-				$(".bootstrap_inside #panel-" + tab_id + '-' + object_id).css("display","block");
+				$('#'+object_id+" #panel-" + tab_id + '-' + object_id).css("display","block");
 				
 				// Build tab contents visual if object ID exists
 				if(eval("layout.props.obj" + tab_id)) {					  
